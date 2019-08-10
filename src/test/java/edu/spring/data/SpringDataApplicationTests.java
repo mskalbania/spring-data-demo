@@ -11,8 +11,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Iterator;
@@ -25,10 +23,6 @@ import static org.hibernate.validator.internal.util.CollectionHelper.asSet;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-@SqlGroup({
-                  @Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:data.sql"),
-                  @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:drop.sql")
-          })
 public class SpringDataApplicationTests {
 
     private static final Position DEVS = new Position(1, "DEVELOPERS", emptySet());

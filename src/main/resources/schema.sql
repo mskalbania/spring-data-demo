@@ -26,7 +26,7 @@ CREATE TABLE CERTIFICATE
 CREATE TABLE POSITION
 (
     id   INT PRIMARY KEY NOT NULL,
-    name VARCHAR(20)     NOT NULL
+    name varchar(20)     NOT NULL,
 );
 
 CREATE TABLE EMPLOYEE_POSITION
@@ -38,7 +38,16 @@ CREATE TABLE EMPLOYEE_POSITION
 );
 
 INSERT INTO ADDRESS(id, street, city)
-VALUES (1, 'Ogrodowa', 'Siewierz');
+VALUES (1, 'Ogrodowa', 'Siewierz'),
+       (2, 'Ogrodowa2', 'Siewierz2'),
+       (3, 'Ogrodowa3', 'Siewierz3'),
+       (4, 'Ogrodowa4', 'Siewierz4'),
+       (5, 'Ogrodowa5', 'Siewierz5'),
+       (6, 'Ogrodowa6', 'Siewierz6'),
+       (7, 'Ogrodowa7', 'Siewierz7'),
+       (8, 'Ogrodowa8', 'Siewierz8'),
+       (9, 'Ogrodowa9', 'Siewierz9');
+
 
 INSERT INTO EMPLOYEE (id, first_name, last_name, address_id)
 VALUES (1, 'Mateusz', 'Skalbania', 1),
