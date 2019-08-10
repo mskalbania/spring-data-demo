@@ -1,5 +1,8 @@
-package edu.spring.data.entity;
+package edu.spring.data.entity.employee;
 
+import edu.spring.data.entity.address.Address;
+import edu.spring.data.entity.Certificate;
+import edu.spring.data.entity.Position;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,20 +15,22 @@ import java.util.Set;
 @Table(name = "EMPLOYEE")
 @AllArgsConstructor
 @NoArgsConstructor
+@NamedEntityGraph(name = "Emploee.certs",
+                  attributeNodes = @NamedAttributeNode("certificates"))
 public class Employee {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false, updatable = false)
     private int id;
 
     @Column(name = "first_name", nullable = false)
-    private String fistName;
+    private String firstName;
 
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @OneToOne(optional = false, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
     private Address address;
 
     @OneToMany(fetch = FetchType.LAZY)

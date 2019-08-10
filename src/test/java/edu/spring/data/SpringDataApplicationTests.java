@@ -1,8 +1,8 @@
 package edu.spring.data;
 
-import edu.spring.data.entity.Address;
+import edu.spring.data.entity.address.Address;
 import edu.spring.data.entity.Certificate;
-import edu.spring.data.entity.Employee;
+import edu.spring.data.entity.employee.Employee;
 import edu.spring.data.entity.Position;
 import edu.spring.data.repository.CertificateRepository;
 import edu.spring.data.repository.EmployeeRepository;
@@ -100,7 +100,7 @@ public class SpringDataApplicationTests {
         return "POS: " + position.getName() + " [" +
 
                 position.getEmployees().stream()
-                        .map(it -> it.getFistName() + " " + it.getLastName())
+                        .map(it -> it.getFirstName() + " " + it.getLastName())
                         .collect(Collectors.joining(", "))
 
                 + "]";

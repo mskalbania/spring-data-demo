@@ -14,7 +14,7 @@ public class Address {
     private final String street;
     private final String city;
 
-    public static Address fromEntity(edu.spring.data.entity.Address entity) {
+    public static Address fromEntity(edu.spring.data.entity.address.Address entity) {
         return new Address(entity.getStreet(), entity.getCity());
     }
 }
